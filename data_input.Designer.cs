@@ -1,6 +1,6 @@
 ﻿namespace Windows_Forms_Basics
 {
-    partial class exercicio1
+    partial class data_input
     {
         /// <summary>
         ///  Required designer variable.
@@ -64,6 +64,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(119, 94);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(165, 27);
             this.txtPassword.TabIndex = 3;
             // 
@@ -77,7 +78,7 @@
             this.bntLogin.UseVisualStyleBackColor = true;
             this.bntLogin.Click += new System.EventHandler(this.bntLogin_Click);
             // 
-            // Form1
+            // data_input
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblPassaword);
             this.Controls.Add(this.lblEmail);
-            this.Name = "Form1";
+            this.Name = "data_input";
             this.Text = "Email Login";
             this.ResumeLayout(false);
             this.PerformLayout();

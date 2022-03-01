@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Windows Forms Basics": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    },
+    "Perfil 1": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,8 +1,8 @@
 namespace Windows_Forms_Basics
 {
-    public partial class exercicio1 : Form
+    public partial class data_input : Form
     {
-        public exercicio1()
+        public data_input()
         {
             InitializeComponent();
         }
