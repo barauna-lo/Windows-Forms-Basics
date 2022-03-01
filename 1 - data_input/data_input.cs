@@ -12,6 +12,7 @@ namespace Windows_Forms_Basics
             String email;
             String password;
 
+            // input into String
             email = txtEmail.Text;
             password = txtPassword.Text;
 

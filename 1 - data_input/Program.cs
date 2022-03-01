@@ -1,4 +1,4 @@
-namespace name_list
+namespace data_input
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace name_list
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new multiplication_table());
+            Application.Run(new data_input());
         }
     }
 }
