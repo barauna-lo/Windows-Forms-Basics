@@ -33,6 +33,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.bntLogin = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // lblEmail
@@ -102,5 +103,6 @@
         private TextBox txtEmail;
         private TextBox txtPassword;
         private Button bntLogin;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
