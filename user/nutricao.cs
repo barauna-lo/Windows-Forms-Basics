@@ -1,8 +1,8 @@
 namespace user
 {
-    public partial class user : Form
+    public partial class nutricao : Form
     {
-        public user()
+        public nutricao()
         {
             InitializeComponent();
         }
@@ -38,7 +38,6 @@ namespace user
             if (String.IsNullOrEmpty(cblPrato.Text))
             {
                 txtQtdPrato.Text = "0";
-                txtCalPrato.Text = "0";
             }
             else
             {
@@ -47,6 +46,15 @@ namespace user
                 if (prato == "Vegetariano")
                 {
                     txtCalPrato.Text = String.Format("{0:0.}", 180);
+
+                    int idade, peso2;
+                    idade = Convert.ToInt32(txtIdade.Text);
+                    peso2 = Convert.ToInt32(txtPeso.Text);
+
+                    if (idade < 18 && peso2 < 75)
+                    {
+                        MessageBox.Show("Opção Vegetariano não permitida, escolha outro item.");
+                    }
                 }
                 if (prato == "Peixe")
                 {
@@ -59,6 +67,15 @@ namespace user
                 if (prato == "Carne")
                 {
                     txtCalPrato.Text = String.Format("{0:0.}", 350);
+
+                    int idade, peso2;
+                    idade = Convert.ToInt32(txtIdade.Text);
+                    peso2 = Convert.ToInt32(txtPeso.Text);
+
+                    if (idade < 18 && peso2 > 75)
+                    {
+                        MessageBox.Show("Opção Carne não permitida, escolha outro item.");
+                    }
                 }
 
             }
@@ -94,61 +111,27 @@ namespace user
         {
             int qtdPrato, qtdSobremesa, qtdBebida, calPrato, calSobremesa, calBebida, totalCalorias;
 
-            if (String.IsNullOrEmpty(cblPrato.Text))
+
+            if (String.IsNullOrEmpty(txtQtdSobremesa.Text) || String.IsNullOrEmpty(txtQtdSobremesa.Text) || String.IsNullOrEmpty(txtQtdPrato.Text))
             {
-                txtQtdSobremesa.Text = "0";
+                MessageBox.Show("inserir quantidades");
             }
             else
             {
-                if (String.IsNullOrEmpty(txtQtdPrato.Text))
-                {
-                    MessageBox.Show("Inserir quantidade de Pratos");
-                }
-                else
-                {
-                    qtdPrato = Convert.ToInt32(txtQtdPrato.Text);
-                    calPrato = Convert.ToInt32(txtCalPrato.Text);
-                }
-            }
+                qtdPrato = Convert.ToInt32(txtQtdPrato.Text);
+                calPrato = Convert.ToInt32(txtCalPrato.Text);
+                qtdSobremesa = Convert.ToInt32(txtQtdSobremesa.Text);
+                calSobremesa = Convert.ToInt32(txtCalSobremesa.Text);
+                qtdBebida = Convert.ToInt32(txtQtdBebida.Text);
+                calBebida = Convert.ToInt32(txtCalBebida.Text);
+                totalCalorias = qtdPrato * calPrato + qtdSobremesa * calSobremesa + qtdBebida * calBebida;
+                txtTotalCal.Text = String.Format("{0:0.00}", totalCalorias);
 
-            if (String.IsNullOrEmpty(cblSobremesa.Text))
-            {
-                txtQtdSobremesa.Text = "0";
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(txtQtdSobremesa.Text))
+                if(totalCalorias > 600)
                 {
-                    MessageBox.Show("Inserir quantidade de Sobremesas");
-                }
-                else
-                {
-                    qtdSobremesa = Convert.ToInt32(txtQtdSobremesa.Text);
-                    calSobremesa = Convert.ToInt32(txtCalSobremesa.Text);
+                    MessageBox.Show("Quantidade de Calorias Elevada");
                 }
             }
-
-            if (String.IsNullOrEmpty(cblBebida.Text))
-            {
-                txtQtdBebida.Text = "0";
-             
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(txtQtdSobremesa.Text))
-                {
-                    MessageBox.Show("Inserir quantidade de Bebidas");
-                }
-                else
-                {
-                    qtdBebida = Convert.ToInt32(txtQtdBebida.Text);
-                    calBebida = Convert.ToInt32(txtCalBebida.Text);
-                }
-            }
-
-            totalCalorias = qtdPrato * calPrato + qtdSobremesa * calSobremesa + qtdBebida * calBebida;
-            txtIMC.Text = String.Format("{0:0.00}", totalCalorias);
-
         }
 
         private void cblSobremesa_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,7 +141,7 @@ namespace user
             if (String.IsNullOrEmpty(cblSobremesa.Text))
             {
                 txtQtdSobremesa.Text = "0";
-                txtCalSobremesa.Text = "0";
+                
             }
             else
             {
@@ -193,7 +176,6 @@ namespace user
             if (String.IsNullOrEmpty(cblBebida.Text))
             {
                 txtQtdBebida.Text = "0";
-                txtCalBebida.Text = "0";
             }
             else
             {
@@ -217,6 +199,29 @@ namespace user
                 }
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            txtIdade.Clear();
+            txtPeso.Clear();
+            txtAltura.Clear();
+            txtIMC.Clear();
+
+            
+            txtQtdPrato.Clear();    
+            //txtCalPrato.Clear();
+
+            txtQtdSobremesa.Clear();
+            txtCalSobremesa.Clear();
+
+            txtQtdBebida.Clear();
+            //txtCalBebida.Clear();
+
+            txtQtdSobremesa.Clear();
+           // txtTotalCal.Clear();
+
         }
     }
 }

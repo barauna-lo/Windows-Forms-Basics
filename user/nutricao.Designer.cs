@@ -1,6 +1,6 @@
 ﻿namespace user
 {
-    partial class user
+    partial class nutricao
     {
         /// <summary>
         ///  Required designer variable.
@@ -44,7 +44,6 @@
             this.lblIMC = new System.Windows.Forms.Label();
             this.lblPrato = new System.Windows.Forms.Label();
             this.cblPrato = new System.Windows.Forms.ComboBox();
-            this.txtCalPrato = new System.Windows.Forms.TextBox();
             this.lblCaloria = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCalSobremesa = new System.Windows.Forms.TextBox();
@@ -63,11 +62,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTotalCal = new System.Windows.Forms.TextBox();
             this.lblTotalCal = new System.Windows.Forms.Label();
+            this.txtCalPrato = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(29, 357);
+            this.btnCalcular.Location = new System.Drawing.Point(337, 353);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(114, 60);
             this.btnCalcular.TabIndex = 0;
@@ -79,11 +80,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Location = new System.Drawing.Point(233, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 39);
+            this.label1.Size = new System.Drawing.Size(415, 39);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CADASTRAR USUÁRIO";
+            this.label1.Text = "Calculador de IMC e Calorias";
             // 
             // lblNome
             // 
@@ -208,14 +209,6 @@
             this.cblPrato.TabIndex = 15;
             this.cblPrato.SelectedIndexChanged += new System.EventHandler(this.cblPrato_SelectedIndexChanged);
             // 
-            // txtCalPrato
-            // 
-            this.txtCalPrato.Location = new System.Drawing.Point(122, 213);
-            this.txtCalPrato.Name = "txtCalPrato";
-            this.txtCalPrato.Size = new System.Drawing.Size(92, 27);
-            this.txtCalPrato.TabIndex = 16;
-            this.txtCalPrato.TextChanged += new System.EventHandler(this.txtCalPrato_TextChanged);
-            // 
             // lblCaloria
             // 
             this.lblCaloria.AutoSize = true;
@@ -320,6 +313,7 @@
             this.txtQtdPrato.Name = "txtQtdPrato";
             this.txtQtdPrato.Size = new System.Drawing.Size(38, 27);
             this.txtQtdPrato.TabIndex = 28;
+            this.txtQtdPrato.Text = "0";
             // 
             // txtQtdSobremesa
             // 
@@ -327,6 +321,7 @@
             this.txtQtdSobremesa.Name = "txtQtdSobremesa";
             this.txtQtdSobremesa.Size = new System.Drawing.Size(38, 27);
             this.txtQtdSobremesa.TabIndex = 30;
+            this.txtQtdSobremesa.Text = "0";
             // 
             // label5
             // 
@@ -343,6 +338,7 @@
             this.txtQtdBebida.Name = "txtQtdBebida";
             this.txtQtdBebida.Size = new System.Drawing.Size(38, 27);
             this.txtQtdBebida.TabIndex = 32;
+            this.txtQtdBebida.Text = "0";
             // 
             // label6
             // 
@@ -364,7 +360,7 @@
             // 
             // txtTotalCal
             // 
-            this.txtTotalCal.Location = new System.Drawing.Point(149, 299);
+            this.txtTotalCal.Location = new System.Drawing.Point(466, 301);
             this.txtTotalCal.Name = "txtTotalCal";
             this.txtTotalCal.Size = new System.Drawing.Size(92, 27);
             this.txtTotalCal.TabIndex = 34;
@@ -373,17 +369,36 @@
             // lblTotalCal
             // 
             this.lblTotalCal.AutoSize = true;
-            this.lblTotalCal.Location = new System.Drawing.Point(23, 299);
+            this.lblTotalCal.Location = new System.Drawing.Point(340, 301);
             this.lblTotalCal.Name = "lblTotalCal";
             this.lblTotalCal.Size = new System.Drawing.Size(120, 20);
             this.lblTotalCal.TabIndex = 35;
             this.lblTotalCal.Text = "Total de Calorias";
             // 
-            // user
+            // txtCalPrato
+            // 
+            this.txtCalPrato.Location = new System.Drawing.Point(122, 213);
+            this.txtCalPrato.Name = "txtCalPrato";
+            this.txtCalPrato.Size = new System.Drawing.Size(92, 27);
+            this.txtCalPrato.TabIndex = 36;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(457, 353);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 60);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Limpar todos os campos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // nutricao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 439);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtCalPrato);
             this.Controls.Add(this.lblTotalCal);
             this.Controls.Add(this.txtTotalCal);
             this.Controls.Add(this.label7);
@@ -402,7 +417,6 @@
             this.Controls.Add(this.cblSobremesa);
             this.Controls.Add(this.lblSobremesa);
             this.Controls.Add(this.lblCaloria);
-            this.Controls.Add(this.txtCalPrato);
             this.Controls.Add(this.cblPrato);
             this.Controls.Add(this.lblPrato);
             this.Controls.Add(this.txtIMC);
@@ -419,8 +433,8 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCalcular);
-            this.Name = "user";
-            this.Text = "Cadastrar Usuario";
+            this.Name = "nutricao";
+            this.Text = "IMC & Calorias";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,7 +458,6 @@
         private Label lblIMC;
         private Label lblPrato;
         private ComboBox cblPrato;
-        private TextBox txtCalPrato;
         private Label lblCaloria;
         private Label label2;
         private TextBox txtCalSobremesa;
@@ -463,5 +476,7 @@
         private Label label7;
         private TextBox txtTotalCal;
         private Label lblTotalCal;
+        private TextBox txtCalPrato;
+        private Button button1;
     }
 }
